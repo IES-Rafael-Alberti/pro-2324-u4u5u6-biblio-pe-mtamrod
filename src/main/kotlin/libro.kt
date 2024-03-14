@@ -3,5 +3,13 @@ package org.pebiblioteca
 /**
  * La clase libro contiene todos los datos necesarios para los libros, no contiene ninguna lógica asociada.
  */
-data class libro(var Id: Int = 0, val titulo: String = "", val autor: String = "", val ano_publicacion: Int = 0, val tematica: String = "", val estado: String = "disponible") {
+data class libro(var Id: Int, val titulo: String, val autor: String, val ano_publicacion: Int, val tematica: String, var estado: String = "disponible") {
+    init {
+        requireNotNull(Id) { "Este campo no puede estar vacío" }
+        requireNotNull(titulo) { "Este campo no puede estar vacío" }
+        requireNotNull(autor) { "Este campo no puede estar vacío" }
+        requireNotNull(ano_publicacion) { "Este campo no puede estar vacío" }
+        requireNotNull(tematica) { "Este campo no puede estar vacío" }
+        requireNotNull(estado) { "Este campo no puede estar vacío" }
+    }
 }
