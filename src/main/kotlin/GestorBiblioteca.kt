@@ -1,13 +1,11 @@
 package org.pebiblioteca
 
-import java.awt.List
-
 /**
  * La clase GestorBiblioteca se encarga de la gestión de los libros sobre el catalogo-
  */
 class GestorBiblioteca(libro: libro) {
     val catalogo = mutableListOf(libro)
-    val registro = listOf(libro.estado)
+    var registro = listOf(libro.estado)
     /**
      * El método agregarLibro se encarga de añadir el nuevo libro que se indique al catálogo (lista) de libros existentes.
      */
@@ -31,6 +29,7 @@ class GestorBiblioteca(libro: libro) {
         } else {
             println("El libro indicado no se encuentra disponible")
         }
+        registro += ""
     }
 
     /**
